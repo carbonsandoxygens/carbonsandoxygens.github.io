@@ -1,0 +1,67 @@
+body, html {
+    height: 100dvh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Fantasque Sans Mono', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.button {
+  --b: 0.1rem;
+  --s: .35rem;
+  --color: #0f0f0f;
+  padding: calc(.25em + var(--s)) calc(.8em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover,
+.button:focus-visible{
+  --_p: 0px;
+  outline-offset: .05em;
+}
+
+.button:active {
+  background: var(--color);
+  color: #fff;
+}
+
+.centered {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    text-decoration: none; 
+}
+
+a {
+    color: #000;
+}
+
+.emoji {
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+@media (min-width:320px)  { 
+    footer {
+        line-height: 2.5rem;
+    }
+}
